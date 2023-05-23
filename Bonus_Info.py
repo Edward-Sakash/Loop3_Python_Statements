@@ -72,18 +72,21 @@ d) Marie Curie
 # Compile regular expressions for question, answer, and solution
 pattern = r"(?s)(.+?)\n\[(?:ANSWER: ([a-d])\])"
 matches = re.findall(pattern, info)
-
+#print(matches)
 # Create a list of dictionaries containing the extracted information
 questions_list = []
 for question, answer in matches:
+    print(question)
+    repr(question)
     question_dict = {
         "question": question.strip(),
-        "answer": answer
+        "answers": [],
+        "solution": answer
     }
     questions_list.append(question_dict)
 
 # Print the list of dictionaries
 for question in questions_list:
     print("Question:", question["question"])
-    print("Answer:", question["answer"])
+    print("Answer:", question["solution"])
     print()
