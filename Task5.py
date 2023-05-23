@@ -28,8 +28,8 @@ Found a digit  6
 
 Exit after finding '=' sign """
 
-# Solution
-user_input = input("Input your characters: ")  # Prompt the user to enter a string
+# Solution 1
+"""user_input = input("Input your characters: ")  # Prompt the user to enter a string
 
 sum_of_digits = 0  # Initialize the variable to store the sum of digits
 
@@ -43,3 +43,32 @@ for char in user_input:  # Iterate over each character in the user input
         break  # Terminate the loop if '=' is found
 
 print("Sum of digits:", sum_of_digits)  # Print the final sum of digits
+"""
+print("___________________________________________________________")
+
+# Solution 2
+# Initialize the sum of digits
+sum_of_digits = 0
+
+# Prompt the user to enter characters
+string = input("Input your characters: ")
+
+# Iterate over the characters in the string
+index = 0
+while index < len(string):
+    # Check if the current character is a digit
+    if string[index].isdigit():
+        digit = int(string[index])
+        print("Found a digit", digit)
+        sum_of_digits += digit
+    
+    # Check if the current character is '='
+    if string[index] == '=':
+        print("\nExit after finding '=' sign")
+        break
+    
+    index += 1
+
+# Print the sum of digits
+print("\nSum of digits:", sum_of_digits)
+
